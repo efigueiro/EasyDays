@@ -1,0 +1,19 @@
+/*Style for all input fields*/
+.input {
+	padding: 2px;
+	width: 200px;
+	font-size: 9pt;
+	border: 1px solid #CCCCCC;
+}
+
+.input300 {
+	padding: 2px;
+	width: 300px;
+	font-size: 9pt;
+}
+
+.inputreadonly {
+	background-color: #F0F0F0;
+	width: 200px;
+	font-size: 9pt;
+}

@@ -1,0 +1,13 @@
+/*Style for all selectBox*/
+.combo {
+	width: 208px;
+	height: 22px;
+	font-size: 9pt;
+	border: 1px solid #CCCCCC;
+}
+
+.combo300 {
+	font-size: 9pt;
+	width: 307px;
+	height: 24px;
+}

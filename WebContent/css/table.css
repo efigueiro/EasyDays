@@ -1,0 +1,38 @@
+/*Style for all tables*/
+.table {
+	width: 940px;
+	padding-bottom: 30px;
+}
+
+/* Style for rows*/
+.header {
+	text-align: center;
+	font: 9pt "Trebuchet MS", Arial, Sans-Serif;
+	font-weight: bold;
+	color: #787A8F;
+	background: #eee;
+}
+
+/* Style for columns */
+.first {
+	text-align: left;
+	font: 9pt Arial, sans-serif;
+	background: #FFFFFF;
+}
+
+/* Style for columns */
+.last {
+	font: 9pt Arial, sans-serif;
+	text-align: left;
+	background: #EEEEEE;
+}
+
+/* Style for columns*/
+.action {
+	width:60px;
+	text-align: center;
+	font: 9pt Arial, sans-serif;
+	font-weight: bold;
+	color: Snow;
+	background: #5B74A8;
+}
