@@ -14,9 +14,7 @@
 	<ul>
 		<li><a href="<%=request.getContextPath()%>/modules/main.jsp">Main Page</a></li>
 		<li><a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp">Articles</a></li>
-		<li><a href="<%=request.getContextPath()%>/modules/task/createTask.jsp">Tasks</a></li>
 		<li><a href="<%=request.getContextPath()%>/modules/category/retrieveCategory.jsp">Categories</a></li>
-		<li><a href="<%=request.getContextPath()%>/modules/project/retrieveProject.jsp">Projects</a></li>
 	</ul>
 </body>
 </html>
