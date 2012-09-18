@@ -14,7 +14,7 @@ create table users
 );
 
 drop table credential
-create table credential -- ainda não implementada
+create table credential -- não foi implementada
 (
   credential_id serial not null,
   user_id serial not null,
@@ -27,7 +27,7 @@ create table credential -- ainda não implementada
 ); 
 
 drop table task
-create table task -- ainda não implementada
+create table task -- não foi implementada
 (
   task_id serial not null,
   title varchar(150) not null,
@@ -40,7 +40,7 @@ create table task -- ainda não implementada
 );
 
 drop table stage
-create table stage -- ainda não implementada
+create table stage -- não foi implementada
 (
   stage_id serial not null,
   task_id serial not null,
@@ -80,7 +80,7 @@ create table category
 );
 
 drop table project
-create table project
+create table project -- não foi implementada
 (
   project_id serial not null,
   name varchar(150) not null,
@@ -97,7 +97,7 @@ create table project
 insert into users(email, password, creation_date)
 values ('everson.figueiro@gmail.com', 'scorpion', '03/09/2012')
 
--- the following tables are just for examples...
+-- as tabelas abaixo são somente para exemplos...
 drop table project
 create table project
 (
