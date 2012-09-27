@@ -1,14 +1,15 @@
 /*Style for all tables*/
 .table {
-	width: 940px;
+	width: 900px;
 	padding-bottom: 30px;
+	margin-top: 40px;
+	border:1px solid #EEE;
 }
 
 /* Style for rows*/
 .header {
-	text-align: center;
-	font: 9pt "Trebuchet MS", Arial, Sans-Serif;
-	font-weight: bold;
+	text-align: left;
+	font: 12px;
 	color: #787A8F;
 	background: #eee;
 }
@@ -16,7 +17,7 @@
 /* Style for columns */
 .first {
 	text-align: left;
-	font: 9pt Arial, sans-serif;
+	font: 12px Arial, sans-serif;
 	background: #FFFFFF;
 }
 

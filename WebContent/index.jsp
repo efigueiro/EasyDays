@@ -8,6 +8,8 @@
 <title>Easy Days</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/button.css" type="text/css" />
 </head>
 
 <body>
@@ -37,17 +39,17 @@
 		<div id="leftside">
 			<h2>Identifique-se:</h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/login" method="post">
-				<p>
-					<label for="email">Email:</label><br /> 
-					<input name="email" id="email" value="" type="text" style="width:250px;"/>
-				</p>
-				<p>
-					<label for="password">Senha:</label><br /> 
-                    <input name="password" id="password" value="" type="password" style="width:250px;" />
-				</p>
-				<p>
-					<input name="enter" style="width: 70px; margin-top:10px;" class="" value="Entrar" type="submit" />
-				</p>
+				<ul style="list-style-type:none;">
+					<li>${loginMessage}</li>
+					
+					<li style="margin-top:5px;"><label for="email">Email:</label></li>
+					<li><input name="email" id="email" value="" type="text" class="input"/></li>
+					
+					<li style="margin-top:5px;"><label for="password">Senha:</label></li>
+					<li><input name="password" id="password" value="" type="password" class="input" /></li>
+					
+					<li style="margin-top:15px;"><input name="enter" value="Entrar" type="submit" class="button" /></li>
+				</ul>
 			</form>
 		</div>
 	</div>

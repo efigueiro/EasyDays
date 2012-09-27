@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
 
 		if (authenticated == null || action.equals("logout")) {
 			request.getSession().invalidate();
-			loginMessage = "Session ended!";
+			loginMessage = "Sessão finalizada!";
 			request.setAttribute("loginMessage", loginMessage);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
@@ -64,7 +64,7 @@ public class Login extends HttpServlet {
 		user.setPassword(password);
 
 		if (email.equals("") || password.equals("")) {
-			loginMessage = "Please complete the fields correctly!";
+			loginMessage = "Por favor, complete os campos corretamente!";
 			request.setAttribute("loginMessage", loginMessage);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
@@ -81,7 +81,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("authenticated", authenticated);
 				request.getRequestDispatcher("modules/main.jsp").forward(request, response);
 			} else {
-				loginMessage = "User not found!";
+				loginMessage = "Usuário não localizado!";
 				request.setAttribute("loginMessage", loginMessage);
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}

@@ -1,26 +1,20 @@
 /*Style for all buttons*/
 .button {
-	background-image: url(../images/system/btn_1.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 150px;
-	height: 50px;
-	border: none;
-	background-color: transparent;
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	color: #000;
+	cursor: pointer;
+	font-size: 13px;
+	height: 26px;
 }
 
 .button:hover {
-	background-image: url(../images/system/btn_1.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 143px;
-	height: 48px;
-	border: none;
-	background-color: transparent;
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	color: #000;
+	cursor: pointer;
+	font-size: 13px;
+	height: 26px;
 }
 
 .searchButton{
@@ -31,50 +25,3 @@
 	height: 22px;
 }
 
-.iniciarTurno {
-	background-image: url(../images/iniciar_turno.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 150px;
-	height: 35px;
-	border: none;
-	background-color: transparent;
-}
-
-.iniciarIntervalo {
-	background-image: url(../images/iniciar_intervalo.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 150px;
-	height: 35px;
-	border: none;
-	background-color: transparent;
-}
-
-.finalizarIntervalo {
-	background-image: url(../images/finalizar_intervalo.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 150px;
-	height: 35px;
-	border: none;
-	background-color: transparent;
-}
-
-.finalizarTurno {
-	background-image: url(../images/finalizar_turno.png);
-	background-repeat: no-repeat;
-	font-size: 9pt;
-	text-align: center;
-	color: #FFFFFF;
-	width: 150px;
-	height: 35px;
-	border: none;
-	background-color: transparent;
-}

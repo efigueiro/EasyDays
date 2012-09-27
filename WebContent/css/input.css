@@ -1,15 +1,18 @@
 /*Style for all input fields*/
 .input {
-	padding: 2px;
-	width: 200px;
-	font-size: 9pt;
-	border: 1px solid #CCCCCC;
+	border: 1px solid #eee;
+	margin-top: 5px;
+	width: 250px;
+	height: 16px;
+	font-size: 13px;
 }
 
 .input300 {
-	padding: 2px;
+	border: 1px solid #eee;
+	margin-top: 5px;
 	width: 300px;
-	font-size: 9pt;
+	height: 16px;
+	font-size: 13px;
 }
 
 .inputreadonly {

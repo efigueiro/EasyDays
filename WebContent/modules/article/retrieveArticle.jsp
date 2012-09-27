@@ -12,6 +12,8 @@
 <title>Easy Days</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/button.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css" type="text/css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/util.js"></script>
 </head>
@@ -32,7 +34,7 @@
 		<div class="rights"></div>
 		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout">logout</a>
+			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
 		</div>
 		<div class="lefts">
 			<h1>Easy Days</h1>
@@ -49,41 +51,37 @@
 	
 	<div id="main">
 		<div id="rightside">
-		<h2>Novos Artigos:</h2>
-			<div class="box">
-				<jsp:include page="../../fragments/articleList.jsp" />
-			</div>
 		</div>
 		
 		<div id="leftside">
 		<h2>Busca de artigos:</h2>
-			<form action="/EasyDays/retrieveArticle" method="post">
-				<p>
-					<label for="title">Keywords:</label> <input name="keyword" id="keyword" value="" type="text" style="width: 250px;" />
-				</p>
-
-				<p>
-					<label for="category">Category:</label> 
-					<select style="width: 262px;" name="category" >
-						<option value="all">All categories</option>
-						<c:forEach var="category" items="${categoryList}">
-							<option value="${category.categoryId}">${category.name}</option>
-						</c:forEach>
-					</select>
-				</p>
-
-				<p>
-					<input name="retrieveArticle" style="width: 70px; margin-top:10px;" class="" value="Buscar" type="submit" />
-				</p>
+			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/retrieveArticle" method="post">
+			
+				<ul style="list-style-type:none;">
+					<li><label for="title">Palavra-Chave:</label></li>
+					<li><input name="keyword" id="keyword" value="" type="text" class="input" /></li>
+					
+					<li style="margin-top:5px;"><label for="category">Categoria:</label></li>
+					<li>
+						<select name="category" class="combo" >
+							<option value="all">Todas categorias</option>
+							<c:forEach var="category" items="${categoryList}">
+								<option value="${category.categoryId}">${category.name}</option>
+							</c:forEach>
+						</select>
+					</li>
+					
+					<li><input style="margin-top:15px;" name="retrieveArticle" value="Buscar" type="submit" class="button" /></li>
+				</ul>
 			</form>
 			
 			<c:if test="${not empty articleList}">
-				<table cellspacing="0">
+				<table class="table" cellspacing="0">
 					<tr>
-						<th>Title</th>
-						<th>Category</th>
-						<th>Date</th>
-						<th>Action</th>
+						<th class="header">Title</th>
+						<th class="header">Category</th>
+						<th class="header">Date</th>
+						<th class="header">Action</th>
 					</tr>
 					<c:forEach var="article" items="${articleList}">
 						<tr>
