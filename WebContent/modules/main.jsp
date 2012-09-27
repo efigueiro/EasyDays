@@ -15,7 +15,10 @@
 
 	<div id="top">
 		<div class="rights"></div>
-		<div id="search"></div>
+		<div id="search">
+			<label class="labelEmail">${authenticated.email}  | </label>
+			<a href="/EasyDays/login?action=logout" class="logout">logout</a>
+		</div>
 		<div class="lefts">
 			<h1>Easy Days</h1>
 			<h2>Organizador de tutoriais</h2>
@@ -25,35 +28,27 @@
 	<div id="topmenu">
 		<div class="rights"></div>
 		<div class="lefts">
-			<ul>
-			</ul>
+			<jsp:include page="../fragments/menu.jsp" />
 		</div>
 	</div>
 	
 	<div id="main">
 		<div id="rightside">
+		<h2>Novos Artigos:</h2>
+			<div class="box">
+				<jsp:include page="../fragments/articleList.jsp" />
+			</div>
 		</div>
 		
 		<div id="leftside">
-			<h2>Identifique-se:</h2>
-			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/login" method="post">
-				<p>
-					<label for="email">Email:</label><br /> 
-					<input name="email" id="email" value="" type="text" style="width:250px;"/>
-				</p>
-				<p>
-					<label for="password">Senha:</label><br /> 
-                    <input name="password" id="password" value="" type="password" style="width:250px;" />
-				</p>
-				<p>
-					<input name="enter" style="width: 70px; margin-top:10px;" class="" value="Entrar" type="submit" />
-				</p>
-			</form>
+			<p>${message}</p>
+			<h2>${selectedArticle.title}</h2>
+			${selectedArticle.articleBody}
 		</div>
 	</div>
 	
 	<div id="footer">
-		<div class="rside">&copy; Copyright 2006, <a href="http://www.free-css-templates.com">Easy Days</a> - <a href="http://www.free-css-templates.com/rss/">RSS Feed</a>   <br/>  Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.openwebdesign.org/">Website Design</a></div>
+		<div class="rside">&copy; Copyright 2012, <a href="http://www.free-css-templates.com">Easy Days</a> - <a href="http://www.free-css-templates.com/rss/">RSS Feed</a>   <br/>  Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.openwebdesign.org/">Website Design</a></div>
 	</div>
 </div>
 	

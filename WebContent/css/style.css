@@ -199,3 +199,20 @@ p { margin-top: 5px; }
 /*input.search { border: 1px solid #ccc; padding: 4px; width: 160px; }*/
 .comment { background: #FFF; color: #808080; padding: 10px; margin: 0 0 10px 0; border-top: 1px solid #ccc; }
 .commentsbox { background: #FFF; color: #808080; padding: 10px; margin: 0 0 10px 0; border-top: 1px solid #ccc; }
+
+.logout {
+	color: #FFFFFF;
+	margin-right: 0px;
+	text-decoration: none;
+}
+
+.logout:hover {
+	color: #FFFFFF;
+	margin-right: 0px;
+	text-decoration: underline;
+}
+
+.labelEmail {
+	color: #FFFFFF;
+	margin-right: 0px;
+}

@@ -24,14 +24,15 @@
 
 <body>
 	<form action="/EasyDays/main" method="get">
-		<c:forEach var="article" items="${articleList}">
-				<li><a href="/EasyDays/main?action=article
-				&articleId=${article.articleId}" >${article.title}</a></li>
-		</c:forEach>
+		<ul>
+			<c:forEach var="article" items="${articleList}">
+					<li><a href="/EasyDays/main?action=article &articleId=${article.articleId}" >${article.title}</a></li>
+			</c:forEach>
 		
-		<c:if test="${empty articleList}">
-		 	Records not found.
-		</c:if>
+			<c:if test="${empty articleList}">
+		 		Records not found.
+			</c:if>
+		</ul>	
 	</form>
 </body>
 </html>

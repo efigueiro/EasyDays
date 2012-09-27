@@ -34,24 +34,24 @@ public class Main extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String action = (String) request.getParameter("action");
 		String articleId = (String) request.getParameter("articleId");
 
-		if (StringUtils.isNotEmpty(action) && action.equals("article")) {
-			Article selectedArticle = new Article();
-			try {
-				selectedArticle = ArticleController.getInstance().retrieveByArticleId(Integer.valueOf(articleId));
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			request.setAttribute("selectedArticle", selectedArticle);
-			request.getRequestDispatcher("modules/main.jsp").forward(request, response);
+		if (StringUtils.isNotEmpty(action)) {
+				Article selectedArticle = new Article();
+				try {
+					selectedArticle = ArticleController.getInstance().retrieveByArticleId(Integer.valueOf(articleId));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				request.setAttribute("selectedArticle", selectedArticle);
+				request.getRequestDispatcher("modules/main.jsp").forward(request, response);
 		}
 	}
 
