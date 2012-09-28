@@ -14,8 +14,12 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/button.css" type="text/css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css" type="text/css" />
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/util.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+        mode : "textareas"
+});
+</script>
 </head>
 
 <!-- scripts java -->
@@ -54,48 +58,30 @@
 		</div>
 		
 		<div id="leftside">
-		<h2>Busca de artigos:</h2>
-			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/retrieveArticle" method="post">
+		<h2>Criação de artigos:</h2>
+			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/createArticle" method="post">
 			
 				<ul style="list-style-type:none;">
-					<li><label for="title">Palavra-Chave:</label></li>
-					<li><input name="keyword" id="keyword" value="" type="text" class="input" /></li>
+					<li>${message}</li>
+					
+					<li><label for="title">Título:</label></li>
+					<li><input name="title" id="title" value="" type="text" class="input" /></li>
 					
 					<li style="margin-top:5px;"><label for="category">Categoria:</label></li>
 					<li>
-						<select name="category" class="combo" >
-							<option value="all">Todas categorias</option>
+						<select style="width: 262px;" name="category" class="combo">
 							<c:forEach var="category" items="${categoryList}">
 								<option value="${category.categoryId}">${category.name}</option>
 							</c:forEach>
 						</select>
 					</li>
 					
-					<li><input style="margin-top:15px;" name="retrieveArticle" value="Buscar" type="submit" class="button" /></li>
+					<li style="margin-top:10px;"><label for="articleBody">Digite o artigo:</label></li>
+					<li><textarea cols="80" rows="30" name="articleBody" id="articleBody"></textarea></li>
+					
+					<li style="margin-top:15px;"><input name="createArticle" class="button" value="Create Article" type="submit" /></li>
 				</ul>
 			</form>
-			
-			<c:if test="${not empty articleList}">
-				<table class="table" cellspacing="6">
-					<tr>
-						<th class="header">Title</th>
-						<th class="header">Category</th>
-						<th class="header">Date</th>
-						<th class="header">Action</th>
-					</tr>
-					<c:forEach var="article" items="${articleList}">
-						<tr>
-							<td><a href="/EasyDays/showArticle?articleId=${article.articleId}" title="Click to show article" >${article.title}</a></td>
-							<td>${article.category.name}</td>
-							<td>${article.creationDate}</td>
-							<td>
-								<a href="/EasyDays/updateArticle?articleId=${article.articleId}" title="Edit" ><img src="<%=request.getContextPath()%>/images/pencil.png" border="0"></a>
-								<a href="/EasyDays/deleteArticle?articleId=${article.articleId}" title="Delete" onclick="return deleteRecord()" ><img src="<%=request.getContextPath()%>/images/delete.png" border="0"></a>
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</c:if>
 		</div>
 	</div>
 	

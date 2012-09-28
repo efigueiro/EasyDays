@@ -1,9 +1,8 @@
 /*Style for all tables*/
 .table {
-	width: 900px;
+	width: 100%;
 	padding-bottom: 30px;
 	margin-top: 40px;
-	border:1px solid #EEE;
 }
 
 /* Style for rows*/
@@ -17,7 +16,7 @@
 /* Style for columns */
 .first {
 	text-align: left;
-	font: 12px Arial, sans-serif;
+	font: 14px Arial, sans-serif;
 	background: #FFFFFF;
 }
 
