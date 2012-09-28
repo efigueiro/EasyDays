@@ -2,7 +2,7 @@
  * use this function to delete records.
  */
 function deleteRecord() {
-	if (confirm("You really want to delete this record?"))
+	if (confirm("Deseja excluir este registro?"))
 		return true;
 	else
 		return false;

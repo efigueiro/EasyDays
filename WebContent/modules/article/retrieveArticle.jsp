@@ -85,12 +85,12 @@
 					</tr>
 					<c:forEach var="article" items="${articleList}">
 						<tr>
-							<td><a href="/EasyDays/showArticle?articleId=${article.articleId}" title="Click to show article" >${article.title}</a></td>
+							<td><a href="/EasyDays/showArticle?articleId=${article.articleId}" title="Clique para visualizar artigo" >${article.title}</a></td>
 							<td>${article.category.name}</td>
 							<td>${article.creationDate}</td>
 							<td>
-								<a href="/EasyDays/updateArticle?articleId=${article.articleId}" title="Edit" ><img src="<%=request.getContextPath()%>/images/pencil.png" border="0"></a>
-								<a href="/EasyDays/deleteArticle?articleId=${article.articleId}" title="Delete" onclick="return deleteRecord()" ><img src="<%=request.getContextPath()%>/images/delete.png" border="0"></a>
+								<a href="/EasyDays/updateArticle?articleId=${article.articleId}" title="Editar" ><img src="<%=request.getContextPath()%>/images/edit.png" border="0"></a>
+								<a href="/EasyDays/deleteArticle?articleId=${article.articleId}" title="Excluir" style="margin-left: 10px;" onclick="return deleteRecord()" ><img src="<%=request.getContextPath()%>/images/delete.png" border="0"></a>
 							</td>
 						</tr>
 					</c:forEach>
