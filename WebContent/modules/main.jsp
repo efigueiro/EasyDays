@@ -17,7 +17,7 @@
 		<div class="rights"></div>
 		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout">logout</a>
+			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
 		</div>
 		<div class="lefts">
 			<h1>Easy Days</h1>

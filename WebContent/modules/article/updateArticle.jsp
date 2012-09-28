@@ -12,6 +12,8 @@
 <title>Easy Days</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/button.css" type="text/css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
@@ -30,68 +32,66 @@ tinyMCE.init({
 <!-- end scripts -->
 
 <body>
-	<div id="container">
-		<div id="header">
-			<a href="/EasyDays/login?action=logout" class="logout">logout</a>
+<div id="wrap">
+
+	<div id="top">
+		<div class="rights"></div>
+		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-    		<h1><a href="/">Easy Days</a></h1>
-        	<div class="clear"></div>
+			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
 		</div>
-		<div id="nav">
-			<jsp:include page="../../fragments/menu.jsp" />
-		</div>
-		<div id="body">
-			<div id="content" style="width: 890px;">
-				<div id="toolBar" style="width: 890px;">
-					<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp">Return</a>
-				</div>
-				<p>${message}</p>
-				<fieldset>
-					<legend>Update article</legend>
-					<form action="/EasyDays/updateArticle" method="post">
-						<p>
-							 <input name="articleId" id="articleId" value="${selectedArticle.articleId}" type="hidden" style="width: 250px;" />
-						</p>
-					
-						<p>
-							<label for="title">Title:</label> <input name="title" id="title"
-								value="${selectedArticle.title}" type="text" style="width: 250px;" />
-						</p>
-
-						<p>
-							<label for="category">Category:</label> <select
-								style="width: 262px;" name="category">
-								<option value="${selectedArticle.category.categoryId}">${selectedArticle.category.name}</option>
-								<c:forEach var="category" items="${categoryList}">
-									<option value="${category.categoryId}">${category.name}</option>
-								</c:forEach>
-							</select>
-						</p>
-
-						<p>
-							<label for="articleBody">Body:</label>
-							<textarea cols="80" rows="20" name="articleBody" id="articleBody">${selectedArticle.articleBody}</textarea>
-						</p>
-
-						<p>
-							<input name="saveArticle" style="margin-left: 150px;"
-								class="formbutton" value="Save Article" type="submit" />
-						</p>
-					</form>
-				</fieldset>
-			</div>
-			<div class="clear"></div>
-		</div>
-
-		<div id="footer">
-			<div class="footer-content">
-				<p>
-					&copy; YourSite 2010. Design by <a href="http://www.spyka.net">Free
-						CSS Templates</a> | <a href="http://www.justfreetemplates.com">Free
-						Web Templates</a>
-				</p>
-			</div>
+		<div class="lefts">
+			<h1>Easy Days</h1>
+			<h2>Organizador de tutoriais</h2>
 		</div>
 	</div>
+	
+	<div id="topmenu">
+		<div class="rights"></div>
+		<div class="lefts">
+			<jsp:include page="../../fragments/menu.jsp" />
+		</div>
+	</div>
+	
+	<div id="main">
+		<div id="rightside">
+		</div>
+		
+		<div id="leftside">
+		<h2>Edição de artigos:</h2>
+			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/updateArticle" method="post">
+			<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp" style="float:right;">Voltar</a>
+				<ul style="list-style-type:none;">
+					<li>${message}</li>
+					
+					<li><input name="articleId" id="articleId" value="${selectedArticle.articleId}" type="hidden" /></li>
+					
+					<li><label for="title">Título:</label></li> 
+					<li><input name="title" id="title" value="${selectedArticle.title}" type="text" class="input" /></li>
+					
+					<li style="margin-top:5px;"><label for="category">Categoria:</label></li> 
+					<li>
+						<select name="category" class="combo">
+							<option value="${selectedArticle.category.categoryId}">${selectedArticle.category.name}</option>
+							<c:forEach var="category" items="${categoryList}">
+								<option value="${category.categoryId}">${category.name}</option>
+							</c:forEach>
+						</select>
+					</li>
+					
+					<li style="margin-top:10px;"><label for="articleBody">Digite o artigo:</label></li>
+					<li><textarea cols="80" rows="30" name="articleBody" id="articleBody">${selectedArticle.articleBody}</textarea></li>
+					
+					<li style="margin-top:15px;"><input name="saveArticle" class="button" value="Salvar" type="submit" /></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div class="rside">&copy; Copyright 2012, <a href="http://www.free-css-templates.com">Easy Days</a> - <a href="http://www.free-css-templates.com/rss/">RSS Feed</a>   <br/>  Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.openwebdesign.org/">Website Design</a></div>
+	</div>
+</div>
+	
 </body>
 </html>

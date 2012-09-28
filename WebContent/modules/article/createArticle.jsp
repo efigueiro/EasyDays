@@ -68,7 +68,7 @@ tinyMCE.init({
 					
 					<li style="margin-top:5px;"><label for="category">Categoria:</label></li>
 					<li>
-						<select style="width: 262px;" name="category" class="combo">
+						<select name="category" class="combo">
 							<c:forEach var="category" items="${categoryList}">
 								<option value="${category.categoryId}">${category.name}</option>
 							</c:forEach>
