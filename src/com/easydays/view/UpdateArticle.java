@@ -69,7 +69,7 @@ public class UpdateArticle extends HttpServlet {
 		String categoryId = (String) request.getParameter("category");
 
 		if (StringUtils.isEmpty(title) || StringUtils.isEmpty(articleBody) || categoryId.equals("default")) {
-			message = "Please complete the fields correctly before submit!";
+			message = "Complete o formulário corretamente antes de enviar!";
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("modules/article/updateArticle.jsp").forward(request, response);
 		} else {

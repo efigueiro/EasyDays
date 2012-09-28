@@ -1,3 +1,4 @@
+<%@page import="com.easydays.util.PropertiesUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.*"%>
@@ -57,7 +58,9 @@
 		<h2>Busca de artigos:</h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/retrieveArticle" method="post">
 				<ul style="list-style-type:none;">
-					<li><label for="title">Palavra-Chave:</label></li>
+				
+					<li>${message}</li>
+					<li><label for="title"><%=PropertiesUtil.getProperty("form.title") %></label></li>
 					<li><input name="keyword" id="keyword" value="" type="text" class="input" /></li>
 					
 					<li style="margin-top:5px;"><label for="category">Categoria:</label></li>

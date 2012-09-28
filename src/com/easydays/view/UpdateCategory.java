@@ -66,7 +66,7 @@ public class UpdateCategory extends HttpServlet {
 		String description = (String) request.getParameter("description");
 
 		if (StringUtils.isEmpty(name) || StringUtils.isEmpty(description)) {
-			message = "Please complete the fields correctly before submit!";
+			message = "Complete o formulário corretamente antes de enviar!";
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("modules/category/updateCategory.jsp").forward(request, response);
 		} else {
