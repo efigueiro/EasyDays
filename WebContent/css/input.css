@@ -7,14 +7,6 @@
 	font-size: 13px;
 }
 
-.input300 {
-	border: 1px solid #eee;
-	margin-top: 5px;
-	width: 300px;
-	height: 16px;
-	font-size: 13px;
-}
-
 .inputreadonly {
 	background-color: #F0F0F0;
 	width: 200px;
