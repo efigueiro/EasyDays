@@ -56,7 +56,6 @@
 		<div id="leftside">
 		<h2>Busca de artigos:</h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/retrieveArticle" method="post">
-			
 				<ul style="list-style-type:none;">
 					<li><label for="title">Palavra-Chave:</label></li>
 					<li><input name="keyword" id="keyword" value="" type="text" class="input" /></li>

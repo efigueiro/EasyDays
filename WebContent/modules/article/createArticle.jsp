@@ -60,7 +60,6 @@ tinyMCE.init({
 		<div id="leftside">
 		<h2>Criação de artigos:</h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/createArticle" method="post">
-			
 				<ul style="list-style-type:none;">
 					<li>${message}</li>
 					

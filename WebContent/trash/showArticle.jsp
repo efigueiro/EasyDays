@@ -24,44 +24,40 @@
 <!-- end scripts -->
 
 <body>
-<div id="wrap">
-
-	<div id="top">
-		<div class="rights"></div>
-		<div id="search">
+	<div id="container">
+		<div id="header">
+			<a href="/EasyDays/login?action=logout" class="logout">logout</a>
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
+    		<h1><a href="/">Easy Days</a></h1>
+        	<div class="clear"></div>
 		</div>
-		<div class="lefts">
-			<h1>Easy Days</h1>
-			<h2>Organizador de tutoriais</h2>
-		</div>
-	</div>
-	
-	<div id="topmenu">
-		<div class="rights"></div>
-		<div class="lefts">
+		<div id="nav">
 			<jsp:include page="../../fragments/menu.jsp" />
 		</div>
-	</div>
-	
-	<div id="main">
-		<div id="rightside">
+		<div id="body">
+			<div id="content">
+				<div id="toolBar">
+					<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp">Return</a>
+				</div>
+
+				<div id="content">
+					<p>${message}</p>
+					<h4>${selectedArticle.title}</h4>
+					${selectedArticle.articleBody}
+				</div>
+			</div>
+			<div class="clear"></div>
 		</div>
-		
-		<div id="leftside">
-			<p>${message}</p>
-			<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp" style="float:right;">Voltar</a>
-			<h2>${selectedArticle.title}</h2>
-			${selectedArticle.articleBody}
-			<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp" style="float:right;">Voltar</a>
+
+		<div id="footer">
+			<div class="footer-content">
+				<p>
+					&copy; YourSite 2010. Design by <a href="http://www.spyka.net">Free
+						CSS Templates</a> | <a href="http://www.justfreetemplates.com">Free
+						Web Templates</a>
+				</p>
+			</div>
 		</div>
 	</div>
-	
-	<div id="footer">
-		<div class="rside">&copy; Copyright 2012, <a href="http://www.free-css-templates.com">Easy Days</a> - <a href="http://www.free-css-templates.com/rss/">RSS Feed</a>   <br/>  Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.openwebdesign.org/">Website Design</a></div>
-	</div>
-</div>
-	
 </body>
 </html>
