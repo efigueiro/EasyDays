@@ -78,7 +78,7 @@ tinyMCE.init({
 					<li style="margin-top:10px;"><label for="articleBody">Digite o artigo:</label></li>
 					<li><textarea cols="80" rows="30" name="articleBody" id="articleBody"></textarea></li>
 					
-					<li style="margin-top:15px;"><input name="createArticle" class="button" value="Create Article" type="submit" /></li>
+					<li style="margin-top:15px;"><input name="createArticle" class="button" value="Criar artigo" type="submit" /></li>
 				</ul>
 			</form>
 		</div>
