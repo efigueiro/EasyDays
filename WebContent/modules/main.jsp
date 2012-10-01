@@ -1,11 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.easydays.entity.*"%>
+<%@ page import="com.easydays.model.*"%>
+<%@ page import="com.easydays.controller.*"%>
+<%@page import="com.easydays.util.PropertiesUtil"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Easy Days</title>
+<title><%=PropertiesUtil.getProperty("system.title")%></title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
 </head>
@@ -17,11 +22,11 @@
 		<div class="rights"></div>
 		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
+			<a href="/EasyDays/login?action=logout" class="logout"><%=PropertiesUtil.getProperty("link.logoff")%></a>
 		</div>
 		<div class="lefts">
-			<h1>Easy Days</h1>
-			<h2>Organizador de tutoriais</h2>
+			<h1><%=PropertiesUtil.getProperty("system.title")%></h1>
+			<h2><%=PropertiesUtil.getProperty("system.description")%></h2>
 		</div>
 	</div>
 	
@@ -34,7 +39,7 @@
 	
 	<div id="main">
 		<div id="rightside">
-		<h2>Novos Artigos:</h2>
+		<h2><%=PropertiesUtil.getProperty("column.news")%></h2>
 			<div class="box">
 				<jsp:include page="../fragments/articleList.jsp" />
 			</div>
