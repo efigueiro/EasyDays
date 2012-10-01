@@ -4,12 +4,13 @@
 <%@ page import="com.easydays.entity.*"%>
 <%@ page import="com.easydays.model.*"%>
 <%@ page import="com.easydays.controller.*"%>
+<%@ page import="com.easydays.util.PropertiesUtil"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Easy Days</title>
+<title><%=PropertiesUtil.getProperty("system.title")%></title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
@@ -38,11 +39,11 @@ tinyMCE.init({
 		<div class="rights"></div>
 		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout">Sair</a>
+			<a href="/EasyDays/login?action=logout" class="logout"><%=PropertiesUtil.getProperty("link.logoff")%></a>
 		</div>
 		<div class="lefts">
-			<h1>Easy Days</h1>
-			<h2>Organizador de tutoriais</h2>
+			<h1><%=PropertiesUtil.getProperty("system.title")%></h1>
+			<h2><%=PropertiesUtil.getProperty("system.description")%></h2>
 		</div>
 	</div>
 	
@@ -58,18 +59,18 @@ tinyMCE.init({
 		</div>
 		
 		<div id="leftside">
-		<h2>Edição de artigos:</h2>
+		<h2><%=PropertiesUtil.getProperty("page.updateArticle")%></h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/updateArticle" method="post">
-			<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp" style="float:right;">Voltar</a>
+			<a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp" style="float:right;"><%=PropertiesUtil.getProperty("link.return")%></a>
 				<ul style="list-style-type:none;">
 					<li>${message}</li>
 					
 					<li><input name="articleId" id="articleId" value="${selectedArticle.articleId}" type="hidden" /></li>
 					
-					<li><label for="title">Título:</label></li> 
+					<li><label for="title"><%=PropertiesUtil.getProperty("label.title")%></label></li> 
 					<li><input name="title" id="title" value="${selectedArticle.title}" type="text" class="input" /></li>
 					
-					<li style="margin-top:5px;"><label for="category">Categoria:</label></li> 
+					<li style="margin-top:5px;"><label for="category"><%=PropertiesUtil.getProperty("label.category")%></label></li> 
 					<li>
 						<select name="category" class="combo">
 							<option value="${selectedArticle.category.categoryId}">${selectedArticle.category.name}</option>
@@ -79,10 +80,10 @@ tinyMCE.init({
 						</select>
 					</li>
 					
-					<li style="margin-top:10px;"><label for="articleBody">Digite o artigo:</label></li>
+					<li style="margin-top:10px;"><label for="articleBody"><%=PropertiesUtil.getProperty("label.article")%></label></li>
 					<li><textarea cols="80" rows="30" name="articleBody" id="articleBody">${selectedArticle.articleBody}</textarea></li>
 					
-					<li style="margin-top:15px;"><input name="saveArticle" class="button" value="Salvar" type="submit" /></li>
+					<li style="margin-top:15px;"><input name="saveArticle" class="button" value="<%=PropertiesUtil.getProperty("button.save")%>" type="submit" /></li>
 				</ul>
 			</form>
 		</div>
