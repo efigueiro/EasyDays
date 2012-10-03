@@ -14,6 +14,7 @@ import com.easydays.controller.ArticleController;
 import com.easydays.entity.Article;
 import com.easydays.entity.Category;
 import com.easydays.entity.User;
+import com.easydays.util.PropertiesUtil;
 
 /**
  * Servlet implementation class CreateArticle
@@ -69,7 +70,7 @@ public class UpdateArticle extends HttpServlet {
 		String categoryId = (String) request.getParameter("category");
 
 		if (StringUtils.isEmpty(title) || StringUtils.isEmpty(articleBody) || categoryId.equals("default")) {
-			message = "Complete o formulário corretamente antes de enviar!";
+			message = PropertiesUtil.getProperty("message.emptyField");
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("modules/article/updateArticle.jsp").forward(request, response);
 		} else {

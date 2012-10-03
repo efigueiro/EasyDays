@@ -12,6 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.easydays.controller.CategoryController;
 import com.easydays.entity.Category;
+import com.easydays.util.PropertiesUtil;
 
 /**
  * Servlet implementation class UpdateCategory
@@ -66,7 +67,7 @@ public class UpdateCategory extends HttpServlet {
 		String description = (String) request.getParameter("description");
 
 		if (StringUtils.isEmpty(name) || StringUtils.isEmpty(description)) {
-			message = "Complete o formulário corretamente antes de enviar!";
+			message = PropertiesUtil.getProperty("message.emptyFiled");
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("modules/category/updateCategory.jsp").forward(request, response);
 		} else {

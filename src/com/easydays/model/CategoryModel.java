@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.easydays.entity.Category;
 import com.easydays.entity.User;
+import com.easydays.util.PropertiesUtil;
 
 /**
  * Classe responsável por manipular dados do banco.
@@ -106,7 +107,7 @@ public class CategoryModel extends BaseModel {
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, categoryId);
 			pstm.execute();
-			return "Deleted!";
+			return PropertiesUtil.getProperty("message.delete");
 		} catch (Exception e) {
 			conn.close();
 		}

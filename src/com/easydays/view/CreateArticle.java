@@ -14,6 +14,7 @@ import com.easydays.controller.ArticleController;
 import com.easydays.entity.Article;
 import com.easydays.entity.Category;
 import com.easydays.entity.User;
+import com.easydays.util.PropertiesUtil;
 import com.easydays.util.TimeConverter;
 
 /**
@@ -52,7 +53,7 @@ public class CreateArticle extends HttpServlet {
 		String categoryId = (String) request.getParameter("category");
 
 		if (StringUtils.isEmpty(title) || StringUtils.isEmpty(articleBody) || categoryId.equals("default")) {
-			message = "Please complete the fields correctly before submit!";
+			message = PropertiesUtil.getProperty("message.emptyField");
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("modules/article/createArticle.jsp").forward(request, response);
 		} else {
