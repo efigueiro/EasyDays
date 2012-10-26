@@ -87,12 +87,12 @@
 					</tr>
 					<c:forEach var="article" items="${articleList}">
 						<tr>
-							<td><a href="/EasyDays/showArticle?articleId=${article.articleId}" title="<%=PropertiesUtil.getProperty("tip.view")%>" >${article.title}</a></td>
+							<td><a href="/EasyDays/showArticle?articleId=${article.articleId}" title="<%=Msg.getProperty("tip.view")%>" >${article.title}</a></td>
 							<td>${article.category.name}</td>
 							<td>${article.creationDate}</td>
 							<td>
-								<a href="/EasyDays/updateArticle?articleId=${article.articleId}" title="<%=PropertiesUtil.getProperty("tip.edit")%>" ><img src="<%=request.getContextPath()%>/images/edit.png" border="0"></a>
-								<a href="/EasyDays/deleteArticle?articleId=${article.articleId}" title="<%=PropertiesUtil.getProperty("tip.delete")%>" style="margin-left: 10px;" onclick="return deleteRecord()" ><img src="<%=request.getContextPath()%>/images/delete.png" border="0"></a>
+								<a href="/EasyDays/updateArticle?articleId=${article.articleId}" title="<%=Msg.getProperty("tip.edit")%>" ><img src="<%=request.getContextPath()%>/images/edit.png" border="0"></a>
+								<a href="/EasyDays/deleteArticle?articleId=${article.articleId}" title="<%=Msg.getProperty("tip.delete")%>" style="margin-left: 10px;" onclick="return deleteRecord()" ><img src="<%=request.getContextPath()%>/images/delete.png" border="0"></a>
 							</td>
 						</tr>
 					</c:forEach>
