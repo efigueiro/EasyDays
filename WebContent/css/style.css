@@ -128,6 +128,16 @@ body {
 	font-weight: bold
 }
 
+#topmenu li a:HOVER {
+	color: #FFF;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 15px;
+	text-decoration: underline;
+	background: transparent;
+	font-weight: bold
+}
+
 #topmenu li {
 	padding: 0px;
 	float: left;
@@ -208,7 +218,13 @@ body {
 a {
 	color: #0066B3;
 	background: inherit;
-	text-decoration: none
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: #0066B3;
+	background: inherit;
+	text-decoration: underline;
 }
 
 h1 {
