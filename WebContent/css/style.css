@@ -258,6 +258,11 @@ li {
 	text-decoration: none;
 }
 
+#main #leftside .date a,#main #rightside a:HOVER {
+	border: 0;
+	text-decoration: underline;
+}
+
 .comment .date {
 	text-align: left;
 	border: 0;
@@ -310,7 +315,7 @@ li {
 }
 
 p {
-	margin-top: 5px;
+	margin-top: 8px;
 }
 /*input.search { border: 1px solid #ccc; padding: 4px; width: 160px; }*/
 .comment {
