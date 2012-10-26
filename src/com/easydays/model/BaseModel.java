@@ -4,15 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class BaseModel {
+import com.easydays.util.DataBaseCredential;
 
-	/*
-	 * jdbc:<alias banco de dados>://<ip>:<porta>/<esquema>
-	 */
-	private static final String URL = "jdbc:postgresql://localhost:5432/EasyDays";
-	private static final String DRIVER = "org.postgresql.Driver";
-	private static final String PASSWORD = "scorpion";
-	private static final String USUARIO = "postgres";
+public abstract class BaseModel {
 
 	/*
 	 * connection
@@ -20,7 +14,7 @@ public abstract class BaseModel {
 
 	public Connection getConnection() throws Exception {
 		try {
-			Class.forName(DRIVER);
+			Class.forName(DataBaseCredential.getProperty("driver"));
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
@@ -28,7 +22,10 @@ public abstract class BaseModel {
 
 		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection(URL, USUARIO, PASSWORD);
+			connection = DriverManager.getConnection(
+					DataBaseCredential.getProperty("url"), 
+					DataBaseCredential.getProperty("user"),
+					DataBaseCredential.getProperty("password"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
