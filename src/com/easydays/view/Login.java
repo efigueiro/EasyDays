@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.easydays.controller.LoginController;
 import com.easydays.entity.User;
-import com.easydays.util.PropertiesUtil;
+import com.easydays.util.Msg;
 
 /**
  * Servlet implementation class LoginServlet
@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
 
 		if (authenticated == null || action.equals("logout")) {
 			request.getSession().invalidate();
-			loginMessage = PropertiesUtil.getProperty("message.sessionClosed");
+			loginMessage = Msg.getProperty("message.sessionClosed");
 			request.setAttribute("loginMessage", loginMessage);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
@@ -65,7 +65,7 @@ public class Login extends HttpServlet {
 		user.setPassword(password);
 
 		if (email.equals("") || password.equals("")) {
-			loginMessage = PropertiesUtil.getProperty("message.emptyField");
+			loginMessage = Msg.getProperty("message.emptyField");
 			request.setAttribute("loginMessage", loginMessage);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
@@ -82,7 +82,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("authenticated", authenticated);
 				request.getRequestDispatcher("modules/main.jsp").forward(request, response);
 			} else {
-				loginMessage = PropertiesUtil.getProperty("message.userNotFound");
+				loginMessage = Msg.getProperty("message.userNotFound");
 				request.setAttribute("loginMessage", loginMessage);
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}

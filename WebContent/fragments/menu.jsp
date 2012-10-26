@@ -4,7 +4,7 @@
 <%@ page import="com.easydays.entity.*"%>
 <%@ page import="com.easydays.model.*"%>
 <%@ page import="com.easydays.controller.*"%>
-<%@page import="com.easydays.util.PropertiesUtil"%>
+<%@page import="com.easydays.util.Msg"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,9 +14,9 @@
 </head>
 <body>
 	<ul>
-		<li><a href="<%=request.getContextPath()%>/modules/main.jsp"><%=PropertiesUtil.getProperty("menu.mainPage")%></a></li>
-		<li><a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp"><%=PropertiesUtil.getProperty("menu.retrieveArticle")%></a></li>
-		<li><a href="<%=request.getContextPath()%>/modules/article/createArticle.jsp"><%=PropertiesUtil.getProperty("menu.createArticle")%></a></li>
+		<li><a href="<%=request.getContextPath()%>/modules/main.jsp"><%=Msg.getProperty("menu.mainPage")%></a></li>
+		<li><a href="<%=request.getContextPath()%>/modules/article/retrieveArticle.jsp"><%=Msg.getProperty("menu.retrieveArticle")%></a></li>
+		<li><a href="<%=request.getContextPath()%>/modules/article/createArticle.jsp"><%=Msg.getProperty("menu.createArticle")%></a></li>
 	</ul>
 </body>
 </html>

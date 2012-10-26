@@ -4,13 +4,13 @@
 <%@ page import="com.easydays.entity.*"%>
 <%@ page import="com.easydays.model.*"%>
 <%@ page import="com.easydays.controller.*"%>
-<%@ page import="com.easydays.util.PropertiesUtil"%>
+<%@ page import="com.easydays.util.Msg"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title><%=PropertiesUtil.getProperty("system.title")%></title>
+<title><%=Msg.getProperty("system.title")%></title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/input.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/combo.css" type="text/css" />
@@ -35,11 +35,11 @@
 		<div class="rights"></div>
 		<div id="search">
 			<label class="labelEmail">${authenticated.email}  | </label>
-			<a href="/EasyDays/login?action=logout" class="logout"><%=PropertiesUtil.getProperty("link.logoff")%></a>
+			<a href="/EasyDays/login?action=logout" class="logout"><%=Msg.getProperty("link.logoff")%></a>
 		</div>
 		<div class="lefts">
-			<h1><%=PropertiesUtil.getProperty("system.title")%></h1>
-			<h2><%=PropertiesUtil.getProperty("system.description")%></h2>
+			<h1><%=Msg.getProperty("system.title")%></h1>
+			<h2><%=Msg.getProperty("system.description")%></h2>
 		</div>
 	</div>
 	
@@ -55,35 +55,35 @@
 		</div>
 		
 		<div id="leftside">
-		<h2><%=PropertiesUtil.getProperty("page.retrieveArticle")%></h2>
+		<h2><%=Msg.getProperty("page.retrieveArticle")%></h2>
 			<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/retrieveArticle" method="post">
 				<ul style="list-style-type:none;">
 				
 					<li>${message}</li>
-					<li><label for="title"><%=PropertiesUtil.getProperty("label.keyword")%></label></li>
+					<li><label for="title"><%=Msg.getProperty("label.keyword")%></label></li>
 					<li><input name="keyword" id="keyword" value="" type="text" class="input" /></li>
 					
-					<li style="margin-top:5px;"><label for="category"><%=PropertiesUtil.getProperty("label.category")%></label></li>
+					<li style="margin-top:5px;"><label for="category"><%=Msg.getProperty("label.category")%></label></li>
 					<li>
 						<select name="category" class="combo" >
-							<option value="all"><%=PropertiesUtil.getProperty("label.categories")%></option>
+							<option value="all"><%=Msg.getProperty("label.categories")%></option>
 							<c:forEach var="category" items="${categoryList}">
 								<option value="${category.categoryId}">${category.name}</option>
 							</c:forEach>
 						</select>
 					</li>
 					
-					<li><input style="margin-top:15px;" name="retrieveArticle" value="<%=PropertiesUtil.getProperty("button.search")%>" type="submit" class="button" /></li>
+					<li><input style="margin-top:15px;" name="retrieveArticle" value="<%=Msg.getProperty("button.search")%>" type="submit" class="button" /></li>
 				</ul>
 			</form>
 			
 			<c:if test="${not empty articleList}">
 				<table class="table" cellspacing="6">
 					<tr>
-						<th class="header"><%=PropertiesUtil.getProperty("label.title")%></th>
-						<th class="header"><%=PropertiesUtil.getProperty("label.category")%></th>
-						<th class="header"><%=PropertiesUtil.getProperty("label.date")%></th>
-						<th class="header"><%=PropertiesUtil.getProperty("label.action")%></th>
+						<th class="header"><%=Msg.getProperty("label.title")%></th>
+						<th class="header"><%=Msg.getProperty("label.category")%></th>
+						<th class="header"><%=Msg.getProperty("label.date")%></th>
+						<th class="header"><%=Msg.getProperty("label.action")%></th>
 					</tr>
 					<c:forEach var="article" items="${articleList}">
 						<tr>

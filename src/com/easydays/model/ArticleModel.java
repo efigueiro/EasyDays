@@ -10,7 +10,7 @@ import com.easydays.controller.CategoryController;
 import com.easydays.entity.Article;
 import com.easydays.entity.Category;
 import com.easydays.entity.User;
-import com.easydays.util.PropertiesUtil;
+import com.easydays.util.Msg;
 
 /**
  * Classe responsável por manipular dados do banco.
@@ -47,7 +47,7 @@ public class ArticleModel extends BaseModel {
 			pstm.close();
 			conn.close();
 
-			message = PropertiesUtil.getProperty("message.create");
+			message = Msg.getProperty("message.create");
 		} catch (Exception e) {
 			message = e + " The system encountered problems to perform this action!";
 			conn.close();
@@ -72,7 +72,7 @@ public class ArticleModel extends BaseModel {
 			pstm.close();
 			conn.close();
 
-			message = PropertiesUtil.getProperty("message.update");
+			message = Msg.getProperty("message.update");
 		} catch (Exception e) {
 			message = e + " The system encountered problems to perform this action!";
 			conn.close();
@@ -260,7 +260,7 @@ public class ArticleModel extends BaseModel {
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, articleId);
 			pstm.execute();
-			return PropertiesUtil.getProperty("message.delete");
+			return Msg.getProperty("message.delete");
 		} catch (Exception e) {
 			conn.close();
 		}
