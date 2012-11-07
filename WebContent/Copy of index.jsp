@@ -35,28 +35,32 @@
 
 		<div id="contentliquid">
 			<div id="contentwrap">
-				<div id="content">
-					asdfasdfasdfasdfadfsa
+				<div id="content" style="padding:35px; border:none;">
+					<h2><%=Msg.getProperty("message.login")%></h2>
+					<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/login" method="post">
+						<ul style="list-style-type:none;">
+							<li>${loginMessage}</li>
+					
+							<li style="margin-top:5px;"><label for="email"><%=Msg.getProperty("label.email")%></label></li>
+							<li><input name="email" id="email" value="" type="text" class="input"/></li>
+					
+							<li style="margin-top:5px;"><label for="password"><%=Msg.getProperty("label.password")%></label></li>
+							<li><input name="password" id="password" value="" type="password" class="input" /></li>
+					
+							<li style="margin-top:15px;"><input name="enter" value="<%=Msg.getProperty("button.enter")%>" type="submit" class="button" /></li>
+						</ul>
+					</form>
 				</div>
 			</div>
 		</div>
 		
-		<div id="leftcolumnwrap" style="width:200px;">
-			<div id="leftcolumn" style="padding:10px;">
-				<h2><%=Msg.getProperty("message.login")%></h2>
-				<form style="margin-top:30px; margin-left:20px;" action="/EasyDays/login" method="post">
-					<ul style="list-style-type:none;">
-						<li>${loginMessage}</li>
-					
-						<li style="margin-top:5px;"><label for="email"><%=Msg.getProperty("label.email")%></label></li>
-						<li><input name="email" id="email" value="" type="text" class="input"/></li>
-					
-						<li style="margin-top:5px;"><label for="password"><%=Msg.getProperty("label.password")%></label></li>
-						<li><input name="password" id="password" value="" type="password" class="input" /></li>
-					
-						<li style="margin-top:15px;"><input name="enter" value="<%=Msg.getProperty("button.enter")%>" type="submit" class="button" /></li>
-					</ul>
-				</form>
+		<div id="leftcolumnwrap" style="display:none;">
+			<div id="leftcolumn">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+					Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+					ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+					Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
 			</div>
 		</div>
 		

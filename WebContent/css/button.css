@@ -1,19 +1,23 @@
 /*Style for all buttons*/
 .button {
-	border: 1px solid #CCC;
-	background-color: #EEE;
-	color: #000;
-	cursor: pointer;
-	font-size: 13px;
-	height: 26px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 12px;
+	padding: 5px;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 3px #666666;
+	-moz-box-shadow: 0px 1px 3px #666666;
+	text-shadow: 1px 1px 3px #666666;
+	border: solid #3c7bba 1px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#a5ceed),
+		to(#458bc9) );
+	background: -moz-linear-gradient(top, #a5ceed, #458bc9);
 }
 
 .button:hover {
-	border: 1px solid #CCC;
-	background-color: #EEE;
-	color: #000;
-	cursor: pointer;
-	font-size: 13px;
-	height: 26px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#a5ceed),
+		to(#236cad) );
+	background: -moz-linear-gradient(top, #a5ceed, #236cad)
 }
-
