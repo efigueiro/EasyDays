@@ -1,6 +1,8 @@
 ﻿    /**
     * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
     * http://www.cssportal.com
+	* 
+	* Este arquivo limpa todas as configurações do css para não haver conflitos com diferentes browsers
     */
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
